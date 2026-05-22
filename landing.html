@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Corp — AI for Every Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1A202C; background: #FFFFFF; line-height: 1.6; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .navbar { background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 16px 0; position: sticky; top: 0; z-index: 100; }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; color: #355493; letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: #4A5568; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: #355493; }
+    .nav-cta { background: #355493; color: #FFFFFF; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; border: none; cursor: pointer; }
+    .nav-cta:hover { background: #1E3A6E; }
+
+    .hero { background: linear-gradient(135deg, #355493 0%, #1E3A6E 100%); color: #FFFFFF; padding: 100px 0 80px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
+    .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; max-width: 800px; margin: 0 auto 20px; letter-spacing: -1px; }
+    .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 40px; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary { background: #E8913A; color: #FFFFFF; padding: 14px 36px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; }
+    .btn-hero-primary:hover { background: #D07A2F; }
+    .btn-hero-secondary { background: transparent; color: #FFFFFF; padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.4); text-decoration: none; cursor: pointer; }
+
+    .stats-bar { background: #F7FAFC; border-bottom: 1px solid #E2E8F0; padding: 40px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .stat-number { font-size: 2.5rem; font-weight: 800; color: #355493; }
+    .stat-label { font-size: 0.85rem; color: #4A5568; margin-top: 4px; }
+
+    .features { padding: 80px 0; }
+    .features-header { text-align: center; margin-bottom: 60px; }
+    .features-header h2 { font-size: 2.25rem; font-weight: 800; color: #1A202C; margin-bottom: 12px; }
+    .features-header p { font-size: 1.1rem; color: #4A5568; max-width: 600px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .feature-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; transition: box-shadow 250ms ease; }
+    .feature-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .feature-icon { width: 48px; height: 48px; background: #355493; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.5rem; color: #FFFFFF; }
+    .feature-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #1A202C; }
+    .feature-card p { color: #4A5568; font-size: 0.95rem; line-height: 1.6; }
+
+    .testimonial { background: #F7FAFC; padding: 80px 0; }
+    .testimonial-card { max-width: 800px; margin: 0 auto; text-align: center; }
+    .testimonial-quote { font-size: 1.5rem; font-weight: 500; color: #1A202C; line-height: 1.6; font-style: italic; margin-bottom: 24px; }
+    .testimonial-author { font-weight: 700; color: #355493; }
+    .testimonial-role { color: #4A5568; font-size: 0.9rem; }
+
+    .cta-section { background: linear-gradient(135deg, #355493 0%, #1E3A6E 100%); color: #FFFFFF; padding: 80px 0; text-align: center; }
+    .cta-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
+    .btn-cta { background: #E8913A; color: #FFFFFF; padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 1.05rem; text-decoration: none; border: none; cursor: pointer; display: inline-block; }
+    .btn-cta:hover { background: #D07A2F; }
+
+    .footer { background: #1A202C; color: #A0AEC0; padding: 40px 0; }
+    .footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-weight: 700; color: #FFFFFF; font-size: 1.1rem; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: #A0AEC0; text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-meta { font-size: 0.8rem; color: #4A5568; width: 100%; text-align: center; margin-top: 16px; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.25rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">Acme Corp</div>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#resources">Resources</a>
+        <a class="nav-cta" href="#trials">Start Free Trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Enterprise AI 2026</div>
+      <h1>Acme Corp — AI for Every Business</h1>
+      <p>From startups to enterprises, bring the power of intelligent automation to your team. Build, deploy, and scale AI solutions without the complexity.</p>
+      <div class="hero-buttons">
+        <a class="btn-hero-primary" href="#register">Register Now</a>
+        <a class="btn-hero-secondary" href="#demo">Watch Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-number">500+</div><div class="stat-label">Enterprise Clients</div></div>
+        <div><div class="stat-number">85%</div><div class="stat-label">Faster Deployment</div></div>
+        <div><div class="stat-number">2M+</div><div class="stat-label">Active Users</div></div>
+        <div><div class="stat-number">99.95%</div><div class="stat-label">Uptime SLA</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <h2>Built for Modern Enterprise</h2>
+        <p>Everything you need to revolutionize your business with intelligent automation, powered by Acme's industry-leading platform.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Intelligent Automation</h3>
+          <p>Automate complex business processes end-to-end. Our AI learns your workflows and optimizes performance across departments.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Rapid Deployment</h3>
+          <p>Deploy production-ready AI solutions in days, not months. Pre-built templates for finance, HR, customer service, and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"></div>
+          <h3>Enterprise Security</h3>
+          <p>Your data stays yours. Zero-trust architecture, end-to-end encryption, compliance with SOC 2, HIPAA, and GDPR standards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"></div>
+          <h3>Global Scale</h3>
+          <p>Support for 120+ languages and currencies. Deploy AI agents across 6 continents with sub-100ms latency guarantees.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"></div>
+          <h3>Real-Time Analytics</h3>
+          <p>Monitor AI performance with granular dashboards. Get instant insights on ROI, cost savings, and operational improvements.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">️</div>
+          <h3>Expert Support</h3>
+          <p>Dedicated success managers for enterprise clients. 24/7 support, quarterly business reviews, and continuous optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Acme Corp's AI platform reduced our claims processing time from 14 days to 2 hours. We saved $8.3M in the first year and improved customer satisfaction by 92%. It's a complete game-changer for insurance operations."</p>
+        <p class="testimonial-author">Michael Rodriguez</p>
+        <p class="testimonial-role">VP of Operations, Pinnacle Insurance Group</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Transform Your Business Today</h2>
+      <p>Join 500+ enterprise customers automating critical workflows. Get a personalized demo and $50K in platform credits.</p>
+      <a class="btn-cta" href="#contact">Schedule a Demo</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Acme Corp</div>
+      <div class="footer-links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#docs">Documentation</a>
+        <a href="#support">Support</a>
+        <a href="#sales">Contact Sales</a>
+      </div>
+      <div class="footer-meta">Primary: #355493 | Secondary: #E8913A | Font: Inter | Campaign: Enterprise AI 2026</div>
+    </div>
+  </footer>
+
+</body>
+</html>
