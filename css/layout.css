@@ -1,0 +1,52 @@
+/* ============================================
+   WINGS STUDIO — Layout Styles
+   Consumes tokens from tokens/brand-tokens.css
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--bp-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flex       { display: flex; }
+.flex-col   { flex-direction: column; }
+.flex-wrap  { flex-wrap: wrap; }
+.items-center   { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+.mt-4  { margin-top: var(--space-4); }
+.mb-4  { margin-bottom: var(--space-4); }
+.mt-8  { margin-top: var(--space-8); }
+.mb-8  { margin-bottom: var(--space-8); }
+.p-4   { padding: var(--space-4); }
+.p-6   { padding: var(--space-6); }
+.p-8   { padding: var(--space-8); }
+
+.section {
+  padding: var(--space-16) 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-neutral-300);
+  margin: var(--space-8) 0;
+}
