@@ -1,0 +1,82 @@
+/* ============================================
+   WINGS STUDIO — Master Design Tokens
+   Source of truth for all brand properties.
+   Repo: Urja008/rebranding
+   ============================================ */
+
+:root {
+  /* ---- Color Palette ---- */
+  --color-primary:        #355493;
+  --color-primary-light:  #5A7BBF;
+  --color-primary-dark:   #1E3A6E;
+  --color-secondary:      #E8913A;
+  --color-secondary-light:#F2B97A;
+  --color-accent:         #2CB67D;
+  --color-error:          #E53E3E;
+  --color-warning:        #ECC94B;
+  --color-success:        #38A169;
+
+  /* ---- Neutrals ---- */
+  --color-neutral-900:    #1A202C;
+  --color-neutral-700:    #4A5568;
+  --color-neutral-500:    #A0AEC0;
+  --color-neutral-300:    #E2E8F0;
+  --color-neutral-100:    #F7FAFC;
+  --color-white:          #FFFFFF;
+
+  /* ---- Typography ---- */
+  --font-heading:         'Inter', sans-serif;
+  --font-body:            'Inter', sans-serif;
+  --font-mono:            'Fira Code', monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.75;
+
+  /* ---- Spacing ---- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ---- Border Radius ---- */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg:  0 10px 15px rgba(0,0,0,0.10);
+  --shadow-xl:  0 20px 25px rgba(0,0,0,0.15);
+
+  /* ---- Transitions ---- */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ---- Breakpoints (reference only) ---- */
+  --bp-sm:  640px;
+  --bp-md:  768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+}
